@@ -22,6 +22,7 @@ public abstract class BaseTest {
             String userDataDir = createTempChromeDir();
             WebDriverManager.chromedriver().properties("--user-data-dir=" + userDataDir);
         } catch (Exception e) {
+            e.printStackTrace();
             throw new RuntimeException("Chrome props", e);
         }
     }
