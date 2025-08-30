@@ -8,6 +8,8 @@ public abstract class BaseTest {
     public void setup(){
         WebDriverManager.chromedriver().browserInDocker().dockerNetworkHost();
         WebDriverManager.chromedriver().setup();
+        WebDriverManager wdm = WebDriverManager.chromedriver();
+        System.out.println(wdm.getBrowserPath().get());
         Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
         Configuration.headless = false;
