@@ -6,6 +6,7 @@ import org.testng.annotations.BeforeClass;
 
 public abstract class BaseTest {
     public void setup(){
+        WebDriverManager.chromedriver().browserInDocker();
         WebDriverManager.chromedriver().setup();
         Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
