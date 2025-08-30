@@ -5,7 +5,10 @@ import com.codeborne.selenide.SelenideElement;
 import org.epam.anton.enums.CategoryDropdown;
 import org.epam.anton.page.ListPage;
 import org.epam.anton.page.MainPage;
+import org.epam.anton.page.SignInPage;
+import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class HeaderAmazon {
@@ -14,6 +17,7 @@ public class HeaderAmazon {
     private final SelenideElement logo = $x("//*[@id=\"nav-logo\"]");
     private final SelenideElement searchSelect = $x("//select[contains(@class, \"searchSelect\")]");
     private final SelenideElement displayedSelectedOption = $x("//*[@id=\"nav-search-label-id\"]");
+    private final SelenideElement signIn = $(By.id("nav-link-accountList"));
 
     public ListPage search(String text) {
         searchInput.setValue(text);
@@ -45,5 +49,15 @@ public class HeaderAmazon {
         }else {
             displayedSelectedOption.shouldHave(Condition.exactText(category.getDisplayName()));
         }
+    }
+
+    public SignInPage clickOnSignInSection() {
+        signIn.click();
+        return new SignInPage();
+    }
+
+    public void verifySignInSectionIsVisibleAndClickable() {
+        signIn.shouldBe(Condition.visible);
+        signIn.shouldBe(Condition.clickable);
     }
 }

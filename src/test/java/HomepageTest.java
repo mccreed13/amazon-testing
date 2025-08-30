@@ -1,7 +1,9 @@
 import data_provider.EnumDataProvider;
 import org.epam.anton.enums.CategoryDropdown;
+import org.epam.anton.object.HeaderAmazon;
 import org.epam.anton.page.ListPage;
 import org.epam.anton.page.MainPage;
+import org.epam.anton.page.SignInPage;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
@@ -9,6 +11,7 @@ import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 import static com.codeborne.selenide.Selenide.webdriver;
 import static com.codeborne.selenide.WebDriverConditions.urlContaining;
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class HomepageTest extends BaseTest {
     private final static String BASE_URL = "https://www.amazon.com/";
@@ -42,6 +45,17 @@ public class HomepageTest extends BaseTest {
         mainPage.headerAmazon.verifyCategoryIsSelected(category);
     }
 
+    @Test
+    public void testSignInButton(){
+        MainPage mainPage = new MainPage();
+        mainPage.openWebSite(BASE_URL);
+        HeaderAmazon headerAmazon = mainPage.getHeaderAmazon();
+        headerAmazon.verifySignInSectionIsVisibleAndClickable();
+        SignInPage page = headerAmazon.clickOnSignInSection();
+        String text = page.getEnterMobileOrEmailContainer().text();
+        String expectedContainsText = "Sign in or create account";
+        assertTrue(text.contains(expectedContainsText));
+    }
 
     @AfterTest
     void clearCookies() {
