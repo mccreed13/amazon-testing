@@ -24,7 +24,7 @@ hs_err_pid*
 replay_pid*
 
 #screenshots
-.build/
+build/
 #allure
-.allure-report/
-.allure-results/
+allure-report/
+allure-results/
