@@ -57,6 +57,13 @@ public class HomepageTest extends BaseTest {
         assertTrue(text.contains(expectedContainsText));
     }
 
+    @Test
+    public void testFailing(){
+        MainPage mainPage = new MainPage();
+        mainPage.openWebSite(BASE_URL);
+        webdriver().shouldHave(urlContaining("sd"));
+    }
+
     @AfterTest
     void clearCookies() {
         clearBrowserCookies();
