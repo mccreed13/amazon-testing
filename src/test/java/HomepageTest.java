@@ -58,6 +58,16 @@ public class HomepageTest extends BaseTest {
         webdriver().shouldHave(urlContaining("sd"));
     }
 
+    @Test
+    public void testCartIcon(){
+        MainPage mainPage = new MainPage();
+        mainPage.headerAmazon.isVisibleCartIcon();
+        mainPage.headerAmazon.verifyCartIconCountEquals(0);
+        ListPage listPage = mainPage.search(SEARCH_TEXT);
+        listPage.addFirstAvailableItemToCart();
+        listPage.getHeader().verifyCartIconCountEquals(1);
+    }
+
     @AfterTest
     void clearCookies() {
         clearBrowserCookies();

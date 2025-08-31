@@ -18,6 +18,8 @@ public class HeaderAmazon {
     private final SelenideElement searchSelect = $x("//select[contains(@class, \"searchSelect\")]");
     private final SelenideElement displayedSelectedOption = $x("//*[@id=\"nav-search-label-id\"]");
     private final SelenideElement signIn = $(By.id("nav-link-accountList"));
+    private final SelenideElement cartIcon = $(By.id("nav-cart"));
+    private final SelenideElement cartIconCount = $(By.id("nav-cart-count"));
 
     public ListPage search(String text) {
         searchInput.setValue(text);
@@ -36,6 +38,10 @@ public class HeaderAmazon {
 
     public void isVisibleLogo() {
         logo.shouldBe(Condition.visible);
+    }
+
+    public void isVisibleCartIcon() {
+        cartIcon.shouldBe(Condition.visible);
     }
 
     public void selectCategorySearch(CategoryDropdown category) {
@@ -59,5 +65,9 @@ public class HeaderAmazon {
     public void verifySignInSectionIsVisibleAndClickable() {
         signIn.shouldBe(Condition.visible);
         signIn.shouldBe(Condition.clickable);
+    }
+
+    public void verifyCartIconCountEquals(int count) {
+        cartIconCount.shouldBe(Condition.exactText(String.valueOf(count)));
     }
 }

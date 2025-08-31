@@ -12,7 +12,7 @@ This repository contains a set of automated UI tests for the Amazon online store
 | 1.3 | Category dropdown – Options present and selectable | [X]    | `testCategoryDropdown`                                |
 | 1.4 | Language & region selector – Opens and allows selection | [ ]    | `testLanguageRegionSelector` *(to be implemented)*    |
 | 1.5 | Sign-in button – Visible, clickable, redirects to login page | [X]    | `testSignInButton`                                |
-| 1.6 | Cart icon – Visible, correct item count | [ ]    | `testCartIcon`  *(to be implemented)*                 |
+| 1.6 | Cart icon – Visible, correct item count | [X]    | `testCartIcon`                   |
 | **2. Search Results Page** ||        |                                                       |
 | 2.1 | Results list loading – Product tiles appear after search | [ ]    | `testSearchResultsLoaded`  *(to be implemented)*  |
 | 2.2 | Product title – Visible, clickable, opens detail page | [ ]    | `testProductTitleClickable`   *(to be implemented)*   |
