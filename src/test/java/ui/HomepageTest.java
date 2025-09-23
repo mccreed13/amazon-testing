@@ -1,9 +1,11 @@
-import data_provider.EnumDataProvider;
-import org.anton.enums.CategoryDropdown;
-import org.anton.object.HeaderAmazon;
-import org.anton.page.ListPage;
-import org.anton.page.MainPage;
-import org.anton.page.SignInPage;
+package ui;
+
+import ui.data_provider.EnumDataProvider;
+import org.anton.ui.enums.CategoryDropdown;
+import org.anton.ui.object.HeaderAmazon;
+import org.anton.ui.page.ListPage;
+import org.anton.ui.page.MainPage;
+import org.anton.ui.page.SignInPage;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 

@@ -1,10 +1,10 @@
-package org.anton.page;
+package org.anton.ui.page;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import org.anton.object.HeaderAmazon;
+import org.anton.ui.object.HeaderAmazon;
 
 import static com.codeborne.selenide.Selenide.$x;
 

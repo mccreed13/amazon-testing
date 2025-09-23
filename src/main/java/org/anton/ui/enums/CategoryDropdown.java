@@ -1,4 +1,4 @@
-package org.anton.enums;
+package org.anton.ui.enums;
 
 import lombok.Getter;
 

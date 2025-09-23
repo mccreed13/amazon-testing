@@ -1,11 +1,11 @@
-package org.anton.object;
+package org.anton.ui.object;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import org.anton.enums.CategoryDropdown;
-import org.anton.page.ListPage;
-import org.anton.page.MainPage;
-import org.anton.page.SignInPage;
+import org.anton.ui.enums.CategoryDropdown;
+import org.anton.ui.page.ListPage;
+import org.anton.ui.page.MainPage;
+import org.anton.ui.page.SignInPage;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;

@@ -1,4 +1,4 @@
-package org.anton.page;
+package org.anton.ui.page;
 
 import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
