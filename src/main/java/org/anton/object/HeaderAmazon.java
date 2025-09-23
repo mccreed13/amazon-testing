@@ -1,11 +1,11 @@
-package org.epam.anton.object;
+package org.anton.object;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import org.epam.anton.enums.CategoryDropdown;
-import org.epam.anton.page.ListPage;
-import org.epam.anton.page.MainPage;
-import org.epam.anton.page.SignInPage;
+import org.anton.enums.CategoryDropdown;
+import org.anton.page.ListPage;
+import org.anton.page.MainPage;
+import org.anton.page.SignInPage;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;

@@ -1,4 +1,4 @@
-package org.epam.anton.page;
+package org.anton.page;
 
 import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;

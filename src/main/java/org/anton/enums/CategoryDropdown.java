@@ -1,4 +1,4 @@
-package org.epam.anton.enums;
+package org.anton.enums;
 
 import lombok.Getter;
 

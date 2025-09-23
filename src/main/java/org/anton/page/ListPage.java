@@ -1,9 +1,9 @@
-package org.epam.anton.page;
+package org.anton.page;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
-import org.epam.anton.object.HeaderAmazon;
+import org.anton.object.HeaderAmazon;
 
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;

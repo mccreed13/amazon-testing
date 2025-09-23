@@ -1,6 +1,6 @@
 package data_provider;
 
-import org.epam.anton.enums.CategoryDropdown;
+import org.anton.enums.CategoryDropdown;
 import org.testng.annotations.DataProvider;
 
 public class EnumDataProvider {

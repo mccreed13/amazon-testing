@@ -1,4 +1,4 @@
-package org.epam.anton.page;
+package org.anton.page;
 
 public abstract class BasePage {
 }

@@ -1,9 +1,9 @@
 import data_provider.EnumDataProvider;
-import org.epam.anton.enums.CategoryDropdown;
-import org.epam.anton.object.HeaderAmazon;
-import org.epam.anton.page.ListPage;
-import org.epam.anton.page.MainPage;
-import org.epam.anton.page.SignInPage;
+import org.anton.enums.CategoryDropdown;
+import org.anton.object.HeaderAmazon;
+import org.anton.page.ListPage;
+import org.anton.page.MainPage;
+import org.anton.page.SignInPage;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
