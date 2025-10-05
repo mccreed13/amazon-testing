@@ -28,3 +28,6 @@ build/
 #allure
 allure-report/
 allure-results/
+
+idea/
+target/
