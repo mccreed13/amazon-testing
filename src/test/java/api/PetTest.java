@@ -1,6 +1,8 @@
 package api;
 
+import api.data_provider.EnumDataProvider;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import org.anton.api.object.Category;
 import org.anton.api.object.ApiResponse;
 import org.anton.api.object.Pet;
@@ -13,6 +15,7 @@ import java.util.List;
 import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+import static org.testng.Assert.assertTrue;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class PetTest extends BaseAPITest {
@@ -34,7 +37,7 @@ public class PetTest extends BaseAPITest {
                 .category(new Category(1, "Dog"))
                 .tags(List.of(new Tag(1, "cute")))
                 .photoUrls(List.of("http://example.com/photo.jpg"))
-                .status(Status.Sold)
+                .status(Status.sold)
                 .build();
         Pet actual = given()
                 .contentType(ContentType.JSON)
@@ -81,7 +84,34 @@ public class PetTest extends BaseAPITest {
         Integer actualId = get(PET_ENDPOING + expectedId)
                 .then()
                 .assertThat()
+                .log().all()
                 .extract().path("id");
         assertEquals(expectedId, actualId);
+    }
+
+    @Test(dataProvider = "statusesData", dataProviderClass = EnumDataProvider.class)
+    public void getPetByStatusVerifyStatusTest(Status status){
+        JsonPath jsonPath = given()
+                .param("status", status.name())
+                .get(PET_ENDPOING + "findByStatus")
+                .then()
+                .log().all()
+                .extract()
+                .jsonPath();
+        List<String> actualStringStatuses = jsonPath.get("status");
+        List<Status> actualStatuses = actualStringStatuses.stream().map(Status::valueOf).toList();
+        assertTrue(actualStatuses.stream().allMatch(s -> s.equals(status)));
+    }
+
+    @Test(dataProvider = "statusesData", dataProviderClass = EnumDataProvider.class)
+    public void getPetByStatusSerializeTest(Status status){
+        List<Pet> actualPets = given()
+                .param("status", status.name())
+                .get(PET_ENDPOING + "findByStatus")
+                .then()
+                .log().all()
+                .extract()
+                .body().jsonPath().getList(".",Pet.class);
+        assertTrue(actualPets.stream().allMatch(s -> s.getStatus().equals(status)));
     }
 }
