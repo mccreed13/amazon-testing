@@ -1,6 +1,7 @@
 package org.anton.api.object;
 
 import lombok.*;
+import org.anton.api.enums.Status;
 
 import java.util.List;
 
